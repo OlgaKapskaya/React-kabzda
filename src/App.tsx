@@ -1,7 +1,11 @@
 import React from 'react';
 import './App.css';
-import Technologies from "./Technologies";
-import Header from "./Header";
+import Technologies from "./components/Technologies";
+import Header from "./components/Header";
+import Accordion from "./components/Accordion";
+import Rating from "./components/Rating";
+
+
 
 
 function App() {
@@ -15,37 +19,8 @@ function App() {
             <Accordion/>
         </div>
     );
-
-    function Rating() {
-        console.log("rating render");
-        return (
-            <div>
-                <Star/>
-                <Star/>
-                <Star/>
-                <Star/>
-                <Star/>
-            </div>
-        )
-    }
 }
 
-function Accordion() {
-    console.log("accordion render");
-    return (
-        <div>
-            <AccordionTitle/>
-            <AccordionBody />
-        </div>
-    )
-}
-
-function Star() {
-    console.log("star render");
-    return (
-        <div>Star *</div>
-    )
-}
 
 function AppTitle() {
     return (
@@ -53,21 +28,7 @@ function AppTitle() {
     )
 }
 
-function AccordionTitle() {
-    console.log("AccordionTitle render");
-    return <h3>Menu</h3>
-}
 
-function AccordionBody() {
-    console.log("AccordionBody render");
-    return (
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>);
-}
 
 
 export default App;
