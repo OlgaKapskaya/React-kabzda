@@ -3,23 +3,29 @@ import './App.css';
 import Technologies from "./Technologies";
 import Header from "./Header";
 
+
+
+
 function App() {
+    debugger
   return (
     <div>
      Hello, samurai! Let's go!
         <Header />
         <Technologies />
+        <Rating />
+        <Accordion />
     </div>
   );
 
   function Rating() {
       return (
           <div>
-      <div>star</div>
-      <div>star</div>
-      <div>star</div>
-      <div>star</div>
-      <div>star</div>
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Star />
           </div>
       )
   }
@@ -38,7 +44,11 @@ function Accordion() {
     )
 }
 
-
+function Star() {
+    return (
+        <div>Star *</div>
+    )
+}
 
 
 
