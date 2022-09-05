@@ -7,10 +7,10 @@ import Header from "./Header";
 
 
 function App() {
-    debugger
+    console.log("App rendering");
   return (
     <div>
-     Hello, samurai! Let's go!
+     <AppTitle />
         <Header />
         <Technologies />
         <Rating />
@@ -19,6 +19,7 @@ function App() {
   );
 
   function Rating() {
+      console.log("rating render");
       return (
           <div>
               <Star />
@@ -32,6 +33,7 @@ function App() {
 }
 
 function Accordion() {
+    console.log("accordion render");
     return (
         <div>
             <h3> Menu </h3>
@@ -45,11 +47,17 @@ function Accordion() {
 }
 
 function Star() {
+    console.log("star render");
     return (
         <div>Star *</div>
     )
 }
 
+function AppTitle() {
+    return (
+        <>This is APP component</>
+    )
+}
 
 
 export default App;
