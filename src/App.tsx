@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import Technologies from "./Technologies";
+import Header from "./Header";
 
 function App() {
   return (
@@ -9,29 +11,35 @@ function App() {
         <Technologies />
     </div>
   );
+
+  function Rating() {
+      return (
+          <div>
+      <div>star</div>
+      <div>star</div>
+      <div>star</div>
+      <div>star</div>
+      <div>star</div>
+          </div>
+      )
+  }
 }
 
-const Header = () => {
+function Accordion() {
     return (
         <div>
-            <a href = '#s'>Home</a>
-            <a href = '#s'>News Feed</a>
-            <a href = '#s'>Messages</a>
-        </div>
-    )
-}
-
-const Technologies = () => {
-    return (
-        <div>
+            <h3> Menu </h3>
             <ul>
-                <li>css</li>
-                <li>html</li>
-                <li>js</li>
-                <li>react</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
             </ul>
         </div>
     )
 }
+
+
+
+
 
 export default App;
