@@ -17,9 +17,9 @@ function App() {
             <Header/>
             <Technologies/>
             Article 1
-            <Rating value={4}/>
+            <Rating value={4} />
             Article 2
-            <Rating value={3}/>
+            <Rating value={3} />
             <Accordion/>
         </div>
     );

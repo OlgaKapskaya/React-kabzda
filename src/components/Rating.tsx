@@ -22,17 +22,7 @@ function Rating(props: any) {
                 <Star selected={false}/>
             </div>
         )
-    } else if (props.value === 0) {
-        return (
-            <div>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-                <Star selected={false}/>
-            </div>
-        )
-    } else if (props.value === 1) {
+    }  else if (props.value === 1) {
         return (
             <div>
                 <Star selected={true}/>
@@ -63,6 +53,17 @@ function Rating(props: any) {
             </div>
         )
     }
+
+        return (
+            <div>
+                <Star selected={false}/>
+                <Star selected={false}/>
+                <Star selected={false}/>
+                <Star selected={false}/>
+                <Star selected={false}/>
+            </div>
+        )
+
 }
 
 
