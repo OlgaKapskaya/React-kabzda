@@ -13,9 +13,13 @@ function App() {
     return (
         <div>
             <AppTitle/>
+
             <Header/>
             <Technologies/>
-            <Rating/>
+            Article 1
+            <Rating value={4}/>
+            Article 2
+            <Rating value={3}/>
             <Accordion/>
         </div>
     );
