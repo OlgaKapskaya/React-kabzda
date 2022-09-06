@@ -1,6 +1,12 @@
 import React from "react";
 
-function Accordion(props: any) {
+type AccordionProps = {
+    title: string;
+}
+type AccordionTitleProps = {
+    title: string;
+}
+function Accordion(props: AccordionProps) {
     console.log("accordion render");
     return (
         <div>
@@ -9,7 +15,7 @@ function Accordion(props: any) {
         </div>
     )
 }
-function AccordionTitle(props: any) {
+function AccordionTitle(props: AccordionTitleProps) {
     console.log("AccordionTitle render");
     return <h3>{props.title}</h3>
 }
