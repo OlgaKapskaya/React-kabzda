@@ -12,7 +12,7 @@ function App() {
     console.log("App rendering");
     return (
         <div>
-            <AppTitle/>
+            <PageTitle title={"This is APP component"}/>
 
             <Header/>
             <Technologies/>
@@ -20,15 +20,17 @@ function App() {
             <Rating value={4} />
             Article 2
             <Rating value={3} />
-            <Accordion/>
+            Article 3
+            <Rating value={2} />
+            <Accordion title={"Menu"}/>
         </div>
     );
 }
 
 
-function AppTitle() {
+function PageTitle(props: any) {
     return (
-        <>This is APP component</>
+        <h1> {props.title} </h1>
     )
 }
 
