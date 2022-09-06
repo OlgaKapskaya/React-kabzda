@@ -18,9 +18,16 @@ function Rating() {
 
 function Star(props: any) {
     console.log("star render");
-    return (
-        <span><b>Star *</b></span>
-    )
+   if (props.selected == true){
+       return (
+           <span><b>Star *</b></span>
+       )
+   } else {
+       return (
+           <span>Star *</span>
+       )
+   }
+
 }
 
 export default Rating;
