@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import Technologies from "./components/Technologies";
-import Header from "./components/Header";
 import Accordion from "./components/Accordion";
 import Rating from "./components/Rating";
 
@@ -14,8 +12,8 @@ function App() {
         <div>
             <PageTitle title={"This is APP component"}/>
 
-            <Header/>
-            <Technologies/>
+
+
             Article 1
             <Rating value={4} />
             Article 2
