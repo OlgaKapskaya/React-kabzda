@@ -1,0 +1,11 @@
+.App{
+
+}
+
+
+.rating{
+    margin: 10px;
+}
+.ratingSelected{
+    background-color: yellow;
+}

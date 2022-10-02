@@ -12,7 +12,7 @@ import NewRating from "./components/Rating/NewRating";
 function App() {
     console.log("App rendering");
     return (
-        <div>
+        <div className={'App'}>
             {/*<PageTitle title={"This is APP component"}/>
             Article 1
             <Rating value={4} />
@@ -21,7 +21,7 @@ function App() {
             Article 3
             <Rating value={2} />*/}
             <NewRating/>
-            {/*<AccordionHook title={"Menu"}/>*/}
+            <AccordionHook title={"Menu"}/>
 
             <OnOff/>
 

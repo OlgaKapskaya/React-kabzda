@@ -10,12 +10,7 @@ function AccordionHook(props: AccordionProps) {
     const [collapsed, setCollapsed] = useState(false);
 
     const onClickExpand = () => {
-        if (collapsed){
-            setCollapsed(false);
-        } else {
-            setCollapsed(true);
-        }
-
+        setCollapsed(!collapsed)
     }
 
 
