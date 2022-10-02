@@ -9,22 +9,15 @@ type AccordionTitleProps = {
 }
 function Accordion(props: AccordionProps) {
     console.log("accordion render");
-    if (props.collapsed === true) {
-        return (
-            <div>
-                <AccordionTitle title={props.title}/>
-                <AccordionBody />
-            </div>
-        )
-    } else {
-        return (
-            <div>
-                <AccordionTitle title={props.title}/>
-            </div>
-        )
-    }
-
+    return (
+        <div>
+            <AccordionTitle title={props.title}/>
+            {!props.collapsed && <AccordionBody/>}
+        </div>
+    )
 }
+
+
 function AccordionTitle(props: AccordionTitleProps) {
     console.log("AccordionTitle render");
     return <h3>{props.title}</h3>
