@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import Rating from "./components/Rating";
+import Rating from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import AccordionHook from "./components/Accordion/AccordionHook";
+import NewRating from "./components/Rating/NewRating";
 
 
 
@@ -19,7 +20,8 @@ function App() {
             <Rating value={3} />
             Article 3
             <Rating value={2} />*/}
-            <AccordionHook title={"Menu"}/>
+            <NewRating/>
+            {/*<AccordionHook title={"Menu"}/>*/}
 
             <OnOff/>
 
