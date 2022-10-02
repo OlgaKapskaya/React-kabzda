@@ -10,44 +10,45 @@ type OnOffProps = {
 export const OnOff = (props: OnOffProps) => {
 
 
-    const [on, setOn] = useState(true);
+    const [on, setOn] = useState(false);
 
-        const onclickOn = () => {
-            setOn(true);
-        }
+    const onclickOn = () => {
+        setOn(true);
+    }
+
     const onclickOff = () => {
         setOn(false);
     }
 
-        const onStyle = {
-            width: '50px',
-            height: '30px',
-            backgroundColor: on ? 'green' : 'white',
-            border: '1px solid black'
-        };
+    const onStyle = {
+        width: '50px',
+        height: '30px',
+        backgroundColor: on ? 'green' : 'white',
+        border: '1px solid black'
+    };
 
-        const offStyle = {
-            width: '50px',
-            height: '30px',
-            backgroundColor: !on ? 'red' : 'white',
-            border: '1px solid black'
-        };
+    const offStyle = {
+        width: '50px',
+        height: '30px',
+        backgroundColor: !on ? 'red' : 'white',
+        border: '1px solid black'
+    };
 
-        const indicatorStyle = {
-            width: '20px',
-            height: '20px',
-            borderRadius: '10px',
-            border: '1px solid black',
-            marginLeft: '10px',
-            marginTop: '5px',
-            backgroundColor: on ? 'green' : 'red',
-        };
+    const indicatorStyle = {
+        width: '20px',
+        height: '20px',
+        borderRadius: '10px',
+        border: '1px solid black',
+        marginLeft: '10px',
+        marginTop: '5px',
+        backgroundColor: on ? 'green' : 'red',
+    };
 
-        return (
+    return (
         <div className={s.container}>
-        <div style={onStyle} onClick={onclickOn}>ON</div>
-        <div style={offStyle} onClick={onclickOff}>OFF</div>
-        <div style={indicatorStyle}> </div>
+            <div style={onStyle} onClick={onclickOn}>ON</div>
+            <div style={offStyle} onClick={onclickOff}>OFF</div>
+            <div style={indicatorStyle}></div>
         </div>
-        )
-        }
+    )
+}
