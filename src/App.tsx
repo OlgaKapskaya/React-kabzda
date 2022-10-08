@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import Rating from "./components/Rating/Rating";
@@ -11,19 +11,20 @@ import NewRating from "./components/Rating/NewRating";
 
 function App() {
     console.log("App rendering");
+    const [on, setOn] = useState(false);
     return (
         <div className={'App'}>
-            {/*<PageTitle title={"This is APP component"}/>
-            Article 1
-            <Rating value={4} />
-            Article 2
-            <Rating value={3} />
-            Article 3
-            <Rating value={2} />*/}
-            <NewRating/>
-            <AccordionHook title={"Menu"}/>
+            {/*<PageTitle title={"This is APP component"}/>*/}
+            {/*Article 1*/}
+            {/*<Rating value={4} />*/}
+            {/*Article 2*/}
+            {/*<Rating value={3} />*/}
+            {/*Article 3*/}
+            {/*<Rating value={2} />*/}
+            {/*<NewRating />*/}
+            {/*<AccordionHook title={"Menu"}/>*/}
 
-            <OnOff/>
+            <OnOff onClick={setOn} on={on}/>
 
         </div>
     );

@@ -1,47 +1,35 @@
 import React, {useState} from "react";
 
-type RatingProps = {
 
-}
-
-function NewRating(props: RatingProps) {
+function NewRating() {
     console.log("rating render");
 
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState< 0 | 1 | 2 | 3 | 4 | 5 >(0);
 
     return (
         <div className={'rating'}>
-            <span onClick={ () => setValue(1) }>
-                <Star selected={value >= 1}/>
-            </span>
-            <span onClick={ () => setValue(2) }>
-                <Star selected={value >= 2}/>
-            </span>
-            <span  onClick={ () => setValue(3) }>
-                <Star selected={value >= 3}/>
-            </span>
-            <span onClick={ () => setValue(4) }>
-                <Star selected={value >= 4}/>
-            </span>
-            <span  onClick={ () => setValue(5) }>
-                <Star selected={value >= 5}/>
-            </span>
-
-
+                <Star selected={value >= 1} selectStar={setValue} value={1}/>
+                <Star selected={value >= 2} selectStar={setValue} value={2}/>
+                <Star selected={value >= 3} selectStar={setValue} value={3}/>
+                <Star selected={value >= 4} selectStar={setValue} value={4}/>
+                <Star selected={value >= 5} selectStar={setValue} value={5}/>
         </div>
     )
 }
 
 
 type StarProps = {
-    selected: boolean;
-
+    selected: boolean
+    value: 0 | 1 | 2 | 3 | 4 | 5
+    selectStar: (value: 0 | 1 | 2 | 3 | 4 | 5) => void
 }
 
 function Star(props: StarProps) {
-    return props.selected ?
-        <span className={'ratingSelected'}><b>Star *</b></span> :
-        <span>Star *</span>
+    const onClickHandler = () => {
+            props.selectStar(props.value)
+
+    }
+    return <span onClick={onClickHandler}> {props.selected ? <b>Star</b> : 'Star'}</span>
 }
 
 export default NewRating;

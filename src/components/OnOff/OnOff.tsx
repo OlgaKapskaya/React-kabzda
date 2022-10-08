@@ -3,34 +3,28 @@ import s from './OnOff.module.css'
 
 type OnOffProps = {
     on?: boolean;
-
+    onClick: (on: boolean) => void
 }
 
 
 export const OnOff = (props: OnOffProps) => {
-
-
-    const [on, setOn] = useState(false);
-
     const onclickOn = () => {
-        setOn(true);
+        props.onClick(true);
     }
-
     const onclickOff = () => {
-        setOn(false);
+        props.onClick(false);
     }
-
     const onStyle = {
         width: '50px',
         height: '30px',
-        backgroundColor: on ? 'green' : 'white',
+        backgroundColor: props.on ? 'green' : 'white',
         border: '1px solid black'
     };
 
     const offStyle = {
         width: '50px',
         height: '30px',
-        backgroundColor: !on ? 'red' : 'white',
+        backgroundColor: !props.on ? 'red' : 'white',
         border: '1px solid black'
     };
 
@@ -41,7 +35,7 @@ export const OnOff = (props: OnOffProps) => {
         border: '1px solid black',
         marginLeft: '10px',
         marginTop: '5px',
-        backgroundColor: on ? 'green' : 'red',
+        backgroundColor: props.on ? 'green' : 'red',
     };
 
     return (

@@ -1,18 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 
 type RatingProps = {
     value: number;
 }
 
 function Rating(props: RatingProps) {
-    console.log("rating render");
+    const [value, setValue] = useState(props.value)
+    console.log(value)
     return (
         <div>
-            <Star selected={ props.value >= 1}/>
-            <Star selected={ props.value >= 2}/>
-            <Star selected={ props.value >= 3}/>
-            <Star selected={ props.value >= 4}/>
-            <Star selected={ props.value >= 5}/>
+            <Star selected={ value >= 1} value={value} setValue={setValue}/>
+            <Star selected={ value >= 2} value={value} setValue={setValue}/>
+            <Star selected={ value >= 3} value={value} setValue={setValue}/>
+            <Star selected={ value >= 4} value={value} setValue={setValue}/>
+            <Star selected={ value >= 5} value={value} setValue={setValue}/>
         </div>
     )
 }
@@ -20,20 +21,18 @@ function Rating(props: RatingProps) {
 
 type StarProps = {
     selected: boolean;
+    value: number
+    setValue: (value: number) => void
 }
 
 function Star(props: StarProps) {
-    console.log("star render");
-   if (props.selected === true){
-       return (
-           <span><b>Star *</b></span>
-       )
-   } else {
-       return (
-           <span>Star *</span>
-       )
-   }
+    const onClickSpanHandler = () => {
+        if (props.value < 5) {
+            props.setValue(props.value+1)
+        }
+    }
 
+  return <span onClick={onClickSpanHandler}> {props.selected ? <b>star</b> : "star"} </span>
 }
 
 export default Rating;
