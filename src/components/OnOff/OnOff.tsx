@@ -8,6 +8,7 @@ type OnOffProps = {
 
 
 export const OnOff = (props: OnOffProps) => {
+
     const onclickOn = () => {
         props.onClick(true);
     }
@@ -20,14 +21,12 @@ export const OnOff = (props: OnOffProps) => {
         backgroundColor: props.on ? 'green' : 'white',
         border: '1px solid black'
     };
-
     const offStyle = {
         width: '50px',
         height: '30px',
         backgroundColor: !props.on ? 'red' : 'white',
         border: '1px solid black'
     };
-
     const indicatorStyle = {
         width: '20px',
         height: '20px',
