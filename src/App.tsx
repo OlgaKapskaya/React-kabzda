@@ -1,45 +1,47 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
-import Rating from "./components/Rating/Rating";
-import {OnOff} from "./components/OnOff/OnOff";
-import AccordionHook from "./components/Accordion/AccordionHook";
-import NewRating from "./components/Rating/NewRating";
+import {AccordionWithDataProps} from "./components/Accordion/AccordionWithDataProps";
+import {CustomSelect, OptionsSelectType} from "./components/Select/CustomSelect";
 
-
-
+export type ItemType = {
+    title: string
+    value: any
+}
 
 function App() {
-    console.log("App rendering");
-    const [on, setOn] = useState(false);
+    let items:ItemType[] = [{title: 'Hello', value: "number 1"}, {title: 'Bye', value: "number 2"}]
+    let optionsToSelect:OptionsSelectType[] = [{id: '1', value: '1'}, {id: '2', value: '2'}, {id: '3', value: '3'}]
+    const [value, setValue] = useState("1")
+    const [collapsed, setCollapsed] = useState<boolean>(false)
+    const changeCollapsed = () => {
+        setCollapsed(!collapsed)
+    }
+    const onChangeSelectItem = (value: string) => {
+      setValue(value)
+    }
+    console.log(value)
     return (
         <div className={'App'}>
-            {/*<PageTitle title={"This is APP component"}/>*/}
-            {/*Article 1*/}
-            {/*<Rating value={4} />*/}
-            {/*Article 2*/}
-            {/*<Rating value={3} />*/}
-            {/*Article 3*/}
-            {/*<Rating value={2} />*/}
-            {/*<NewRating />*/}
-            {/*<AccordionHook title={"Menu"}/>*/}
-
-            <OnOff onClick={setOn} on={on}/>
-
+            {/*<AccordionWithDataProps*/}
+            {/*    titleValue={'Items list'}*/}
+            {/*    collapsed={collapsed}*/}
+            {/*    onChange={changeCollapsed}*/}
+            {/*    items={items}/>*/}
+            <CustomSelect value={value} options={optionsToSelect} onChange={onChangeSelectItem}/>
         </div>
+
     );
 }
 
 type PageTitlePropsType = {
     title: string;
 }
+
 function PageTitle(props: PageTitlePropsType) {
     return (
         <h1> {props.title} </h1>
     )
 }
-
-
 
 
 export default App;
