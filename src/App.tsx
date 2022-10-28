@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
 import {AccordionWithDataProps} from "./components/Accordion/AccordionWithDataProps";
-import {CustomSelect, OptionsSelectType} from "./components/Select/CustomSelect";
+import {Select, OptionsSelectType} from "./components/Select/Select";
+import {CustomSelect} from "./components/Select/CustomSelect";
 
 export type ItemType = {
     title: string
@@ -19,7 +20,7 @@ function App() {
     const onChangeSelectItem = (value: string) => {
       setValue(value)
     }
-    console.log(value)
+
     return (
         <div className={'App'}>
             {/*<AccordionWithDataProps*/}
@@ -27,20 +28,12 @@ function App() {
             {/*    collapsed={collapsed}*/}
             {/*    onChange={changeCollapsed}*/}
             {/*    items={items}/>*/}
-            <CustomSelect value={value} options={optionsToSelect} onChange={onChangeSelectItem}/>
+            <CustomSelect value={value}
+                          options={optionsToSelect}
+                          onChange={onChangeSelectItem}/>
         </div>
 
     );
-}
-
-type PageTitlePropsType = {
-    title: string;
-}
-
-function PageTitle(props: PageTitlePropsType) {
-    return (
-        <h1> {props.title} </h1>
-    )
 }
 
 

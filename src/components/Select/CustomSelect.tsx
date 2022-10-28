@@ -1,25 +1,77 @@
-import React, {ChangeEvent} from "react";
-export type OptionsSelectType = {
-    id: string
-    value: string
-}
-type CustomSelectProps = {
+import React, {useState, KeyboardEvent, useEffect} from "react";
+import {OptionsSelectType} from "./Select";
+import s from './CustomSelect.module.css'
+import img from './chevron-down.svg'
+
+
+type SelectProps = {
     value: string
     options: OptionsSelectType[]
     onChange: (value: string) => void
 }
-export const CustomSelect = (props: CustomSelectProps) => {
-    const onChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
-        props.onChange(event.currentTarget.value)
+export const CustomSelect = (props: SelectProps) => {
+    const [isVisible, setIsVisible] = useState<boolean>(false)
+    const [hoverElement, setHoverElement] = useState<string>(props.value)
+    useEffect( () => {
+        setHoverElement(props.value)
+    }, [props, props.value])
+    const onClickHandler = () => {
+        setIsVisible(!isVisible)
+    }
+    const onChangeSelectItem = (value: string) => {
+        props.onChange(value)
+        setIsVisible(false)
+    }
+    const onKeyUpItemHandler = (event: KeyboardEvent<HTMLDivElement>) => {
+        for (let i = 0; i < props.options.length; i++) {
+            if (hoverElement === props.options[i].value) {
+                if (props.options[i + 1] || props.options[i - 1]) {
+                    if (event.key === 'ArrowDown') {
+                        props.onChange(props.options[i + 1].value);
+                        break
+                    }
+                    if (event.key === 'ArrowUp') {
+                        props.onChange(props.options[i - 1].value);
+                        break
+                    }
+                    if (event.key === 'Enter') {
+                        props.onChange(props.options[i].value);
+                        setIsVisible(false)
+                        break
+                    }
+                }
+            } else props.onChange(props.options[0].value)
+        }
+
     }
 
     return (
-        <select onChange={onChangeHandler}>
-            {props.options.map( elem => {
+        <div className={s.container}>
+            <div className={s.select}
+                 onClick={onClickHandler}
+                 tabIndex={1}
+                 onKeyUp={onKeyUpItemHandler}
+            >
+                <h4>{props.value}</h4>
+                <img src={img} className={isVisible ? s.imgUp : s.imgDown} alt={'arrow'}/>
+            </div>
+            {isVisible && props.options.map(elem => {
+                const itemClass = s.options + ' ' + (elem.value === hoverElement ? s.selected : "")
+                const onMouseEnterHandler = () => {
+                    setHoverElement(elem.value)
+                }
+
                 return (
-                    <option key={elem.id}> {elem.value} </option>
+                    <div className={itemClass}
+                         onMouseEnter={onMouseEnterHandler}
+                         key={elem.id}
+                         onClick={() => onChangeSelectItem(elem.value)}>
+
+                        {elem.value}
+                    </div>
                 )
             })}
-        </select>
+        </div>
+
     )
 }
