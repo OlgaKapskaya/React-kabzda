@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.ec18af7c.css",
-    "main.js": "/static/js/main.9b9d4447.js",
-    "static/media/chevron-down.svg": "/static/media/chevron-down.dc1bc44c12d489302229a2b487f9b01b.svg",
-    "index.html": "/index.html",
-    "main.ec18af7c.css.map": "/static/css/main.ec18af7c.css.map",
-    "main.9b9d4447.js.map": "/static/js/main.9b9d4447.js.map"
+    "main.css": "/React-kabzda/static/css/main.ec18af7c.css",
+    "main.js": "/React-kabzda/static/js/main.0be0e169.js",
+    "static/media/chevron-down.svg": "/React-kabzda/static/media/chevron-down.dc1bc44c12d489302229a2b487f9b01b.svg",
+    "index.html": "/React-kabzda/index.html",
+    "main.ec18af7c.css.map": "/React-kabzda/static/css/main.ec18af7c.css.map",
+    "main.0be0e169.js.map": "/React-kabzda/static/js/main.0be0e169.js.map"
   },
   "entrypoints": [
     "static/css/main.ec18af7c.css",
-    "static/js/main.9b9d4447.js"
+    "static/js/main.0be0e169.js"
   ]
 }
