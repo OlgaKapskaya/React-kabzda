@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ec18af7c.css",
+    "main.js": "/static/js/main.9b9d4447.js",
+    "static/media/chevron-down.svg": "/static/media/chevron-down.dc1bc44c12d489302229a2b487f9b01b.svg",
+    "index.html": "/index.html",
+    "main.ec18af7c.css.map": "/static/css/main.ec18af7c.css.map",
+    "main.9b9d4447.js.map": "/static/js/main.9b9d4447.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec18af7c.css",
+    "static/js/main.9b9d4447.js"
+  ]
+}
