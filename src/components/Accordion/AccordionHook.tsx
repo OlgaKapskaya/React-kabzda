@@ -1,16 +1,25 @@
-import React, {useState} from "react";
+import React, {useReducer} from "react";
 
 type AccordionProps = {
     title: string;
 }
-
+type ActionType = {
+    type: string
+}
 
 function AccordionHook(props: AccordionProps) {
-    console.log("accordion render");
-    const [collapsed, setCollapsed] = useState(false);
+
+    const reducer = (state: boolean, action: ActionType) => {
+        switch (action.type) {
+            case 'COLLAPSE-ACCORDION': return !state
+            default: throw new Error("Bad action type")
+        }
+    }
+
+    const [collapsed, dispatch] = useReducer(reducer,false);
 
     const onClickExpand = () => {
-        setCollapsed(!collapsed)
+        dispatch({type: 'COLLAPSE-ACCORDION'})
     }
 
 

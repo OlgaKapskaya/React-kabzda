@@ -3,6 +3,7 @@ import './App.css';
 import {AccordionWithDataProps} from "./components/Accordion/AccordionWithDataProps";
 import {Select, OptionsSelectType} from "./components/Select/Select";
 import {CustomSelect} from "./components/Select/CustomSelect";
+import AccordionHook from "./components/Accordion/AccordionHook";
 
 export type ItemType = {
     title: string
@@ -28,6 +29,7 @@ function App() {
             {/*    collapsed={collapsed}*/}
             {/*    onChange={changeCollapsed}*/}
             {/*    items={items}/>*/}
+            <AccordionHook title={"123"}/>
             <CustomSelect value={value}
                           options={optionsToSelect}
                           onChange={onChangeSelectItem}/>

@@ -8,7 +8,7 @@ type AccordionTitleProps = {
     title: string;
 }
 function Accordion(props: AccordionProps) {
-    console.log("accordion render");
+    console.log("accordion render")
     return (
         <div>
             <AccordionTitle title={props.title}/>
