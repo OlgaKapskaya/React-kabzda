@@ -29,7 +29,7 @@ function App() {
             {/*    collapsed={collapsed}*/}
             {/*    onChange={changeCollapsed}*/}
             {/*    items={items}/>*/}
-            <AccordionHook title={"123"}/>
+            {/*<AccordionHook title={"123"}/>*/}
             <CustomSelect value={value}
                           options={optionsToSelect}
                           onChange={onChangeSelectItem}/>
