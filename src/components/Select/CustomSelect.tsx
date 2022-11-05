@@ -10,6 +10,7 @@ type SelectProps = {
     onChange: (value: string) => void
 }
 export const CustomSelect = (props: SelectProps) => {
+    console.log('CustomSelect')
     const [isVisible, setIsVisible] = useState<boolean>(false)
     const [hoverElement, setHoverElement] = useState<string>(props.value)
     useEffect( () => {
@@ -75,3 +76,4 @@ export const CustomSelect = (props: SelectProps) => {
 
     )
 }
+export const CustomSelectContainer = React.memo(CustomSelect)
