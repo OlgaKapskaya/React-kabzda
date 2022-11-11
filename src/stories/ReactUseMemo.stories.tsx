@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from "react";
+import React, {useCallback, useMemo, useState} from "react";
 import {CustomSelect, CustomSelectContainer} from "../components/Select/CustomSelect";
 
 export default {
@@ -76,5 +76,38 @@ export const HelpsToReactMemoSelect1 = () => {
         <div>
             <CustomSelectContainer value={value} options={optionsList} onChange={setValue}/>
         </div>
+    )
+}
+const Books = (props: { addBook: () => void}) => {
+    console.log('books')
+    return <div>
+        <button onClick={()=>props.addBook()}>Add new book</button>
+    </div>
+}
+const BooksContainer = React.memo(Books)
+export const LikeUseCallback = () => {
+    console.log('LikeUseCallback')
+    const [counter, setCounter] = useState(0)
+    const [books, setBooks] = useState(['React', 'js', 'Css'])
+    const addBook = () => {
+        setBooks([...books, 'new book A'])
+    }
+
+    let booksList = useCallback(() => {
+       books.filter(elem => elem.toLowerCase().indexOf('a') > -1)
+    }, [books])
+
+    const newAddBookF = useMemo(() => {
+        return addBook
+    }, [books])
+
+    return (
+        <>
+            <button onClick={() => setCounter(counter + 1)}> +</button>
+
+            <div>{counter}</div>
+            <BooksContainer addBook={newAddBookF}/>
+
+        </>
     )
 }
