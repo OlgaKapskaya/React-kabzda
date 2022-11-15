@@ -85,6 +85,7 @@ const Books = (props: { addBook: () => void}) => {
     </div>
 }
 const BooksContainer = React.memo(Books)
+
 export const LikeUseCallback = () => {
     console.log('LikeUseCallback')
     const [counter, setCounter] = useState(0)
