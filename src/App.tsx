@@ -4,6 +4,7 @@ import {AccordionWithDataProps} from "./components/Accordion/AccordionWithDataPr
 import {Select, OptionsSelectType} from "./components/Select/Select";
 import {CustomSelect} from "./components/Select/CustomSelect";
 import AccordionHook from "./components/Accordion/AccordionHook";
+import {Clock} from "./components/Clock/Clock";
 
 export type ItemType = {
     title: string
@@ -33,6 +34,7 @@ function App() {
             <CustomSelect value={value}
                           options={optionsToSelect}
                           onChange={onChangeSelectItem}/>
+            <Clock type='analog'/>
         </div>
 
     );
