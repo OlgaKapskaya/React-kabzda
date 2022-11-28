@@ -27,8 +27,8 @@ export const Clock = (props: ClockPropsType) => {
 
     return (
         <>
-            {props.type === 'digital' ?
-                <div>
+            {props.type === 'digital'
+                ? <div>
                     <span> {hours} </span>:<span> {minutes} </span>:<span> {seconds} </span>
                 </div>
                 : <AnalogClock date={date}/>}
