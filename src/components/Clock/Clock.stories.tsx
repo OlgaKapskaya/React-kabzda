@@ -9,6 +9,6 @@ export const DigitalClock = () => {
         <Clock type='digital'/>
     )
 }
-export const AhalogClock = () => {
+export const AnalogClock = () => {
     return <Clock type='analog'/>
 }

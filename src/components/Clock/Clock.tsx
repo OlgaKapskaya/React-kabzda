@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import s from './Clock.module.css'
+import {AnalogClock} from "./AnalogClock";
 
 const formatTime = (number: number) => {
     return number < 10 ? `0${number}` : number
@@ -30,9 +31,7 @@ export const Clock = (props: ClockPropsType) => {
                 <div>
                     <span> {hours} </span>:<span> {minutes} </span>:<span> {seconds} </span>
                 </div>
-                : <div className={s.clock}>
-
-                </div>}
+                : <AnalogClock date={date}/>}
 
 
         </>
